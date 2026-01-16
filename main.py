@@ -7,6 +7,15 @@ import os
 import pandas as pd
 import requests
 
+
+@app.get("/")
+def root():
+    return {"ok": True, "service": "fineplay-apply"}
+
+@app.get("/health")
+def health():
+    return {"ok": True}
+
 app = FastAPI()
 
 # CORS: 프론트(별도 도메인)에서 호출 가능하게
